@@ -1,0 +1,19 @@
+site_name: fstr
+theme:
+  name: simple-blog
+  features:
+    - content.code.annotate
+  icon:
+    annotation: material/arrow-right-circle
+extra_css:
+  - /style.css
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - pymdownx.highlight:
+      # anchor_linenums: true
+      # linenums: true
+      # linenums_style: inline
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
