@@ -43,7 +43,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -93,7 +94,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "d414c0d03f92797a",
@@ -109,7 +111,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Append.md",
+                "file": "index.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -126,7 +128,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Append.md",
+                "file": "index.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -149,7 +151,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Append.md"
+                "file": "index.md"
               }
             }
           }
@@ -170,11 +172,11 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "dd3dcb22cd7f20f0",
+  "active": "59ad0cb3bb981180",
   "lastOpenFiles": [
-    "index.md",
-    "Definitions.md",
     "Append.md",
+    "Definitions.md",
+    "index.md",
     "From.md",
     "getting_started.md"
   ]

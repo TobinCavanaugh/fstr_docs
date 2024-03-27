@@ -1,0 +1,318 @@
+<!doctype html>
+<html>
+    <head>
+                <title>Append - fstr</title>
+
+            <meta charset="utf-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+            
+            
+            
+
+            
+                <link  rel="icon" type="image/x-icon" href="../assets/img/favicon.ico">
+            
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+                        <script>hljs.initHighlightingOnLoad();</script>
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+            <link rel="stylesheet" href="../assets/css/main.min.css">
+                <link href="/style.css" rel="stylesheet">
+                <script src="../search/main.js"></script>
+
+            
+                
+            
+    </head>
+
+    <body>
+        <div class="container py-3">
+            <header>
+                    <!-- block header -->
+<nav class="navbar navbar-expand-xl border-bottom">
+    <div class="container-fluid">
+        
+
+        
+            <span class=" fs-4 title-color site-name" id="component-site-name" style="text-transform: uppercase;">fstr</span>
+        
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsMenu"
+            aria-controls="navbarsMenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse flex-column ml-auto" id="navbarsMenu">
+            <ul class="navbar-nav">
+
+                <!-- block menu -->
+                <li class="nav-item">
+                    <!-- block menu -->
+    
+        <li class="nav-item" id="component-menu">
+            <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="
+                            nav-link text-gray text-decoration-none" href="..">[Home]</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class=" active 
+                            nav-link text-gray text-decoration-none" href="./">[Append]</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="
+                            nav-link text-gray text-decoration-none" href="../Definitions/">[Definitions]</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="
+                            nav-link text-gray text-decoration-none" href="../From/">[From]</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="
+                            nav-link text-gray text-decoration-none" href="../getting_started/">[Getting started]</a>
+                        </li>
+            </ul>
+        </li>
+<!-- endblock -->
+                </li>
+                <!-- endblock -->
+
+                <!-- block search -->
+                <li class="nav-item">
+                    <a class="collapsed" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                        <div class="md-search-icon">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                        </div>
+                    </a>
+                </li>
+                <!--  endblock -->
+
+                <!-- block source -->
+                <li class="nav-item">
+                    
+                </li>
+                <!--  endblock -->
+            </ul>
+        </div>
+    </div>
+</nav>
+<!--  endblock -->
+            </header>
+
+            <main><!-- block search -->
+<div class="collapse" id="collapseExample">
+    <div role="search" class="search-box">
+        <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+            <input type="text" name="q" class="search-query"
+            placeholder="Search docs" title="Type search term here" />
+        </form>
+    </div>
+</div>
+<!-- endblock -->
+                    <!-- block content -->
+<section class="container post">
+    <article>
+        <header>
+            
+                <h1 class=" title" id="component-title">Append</h1>
+            
+        </header>
+        <p><p><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet"></p>
+<p>This is a set of functions relating to appending to <code>fstr</code> types</p>
+<h3 id="append-c-string-fstr_append_c">Append C string : <code>fstr_append_C</code> :</h3>
+<div class="arguments">
+  <div class="ret">void</div>
+  <div class="arg">fstr * str</div>
+  <div class="arg">chr * buf</div>
+</div>
+
+<p>This function appends a C style string (or literal) <code>buf</code> to our <code>fstr</code>.
+<br/> This supports <code>wchar_t</code>.
+<supwchr/></p>
+<div class="highlight"><pre><span></span><code><span class="n">fstr</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fstr_from_C</span><span class="p">(</span><span class="s">&quot;Hello&quot;</span><span class="p">);</span>
+<span class="n">fstr_append_C</span><span class="p">(</span><span class="n">str</span><span class="p">,</span><span class="w"> </span><span class="s">&quot; Cruel World&quot;</span><span class="p">);</span>
+<span class="n">fstr_println</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
+<span class="n">fstr_free</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
+</code></pre></div>
+<output>Hello Cruel World</output>
+
+<hr />
+<h3 id="append-string-fstr_append">Append string : <code>fstr_append</code> :</h3>
+<div class="arguments">
+  <div class="ret">void</div>
+  <div class="arg">fstr * str</div>
+  <div class="arg">fstr * buf</div>
+</div>
+
+<p>This function appends our <code>fstr * buf</code> contents to our <code>str</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="n">fstr</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fstr_from_C</span><span class="p">(</span><span class="s">&quot;Fancy&quot;</span><span class="p">);</span>
+<span class="n">fstr</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">other</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fstr_from_C</span><span class="p">(</span><span class="s">&quot; Strings&quot;</span><span class="p">);</span>
+<span class="n">fstr_append</span><span class="p">(</span><span class="n">str</span><span class="p">,</span><span class="w"> </span><span class="n">other</span><span class="p">);</span>
+<span class="n">fstr_println</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
+<span class="n">fstr_free</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
+<span class="n">fstr_free</span><span class="p">(</span><span class="n">other</span><span class="p">);</span>
+</code></pre></div>
+<output>Fancy Strings</output>
+
+<hr />
+<h3 id="append-character-fstr_append_chr">Append Character : <code>fstr_append_chr</code> :</h3>
+<div class="arguments">
+  <div class="ret">void</div>
+  <div class="arg">fstr * str</div>
+  <div class="arg">chr c</div>
+</div>
+
+<p>This function appends the character <code>c</code> to our <code>str</code>.
+This supports <code>wchar_t</code></p>
+<div class="highlight"><pre><span></span><code><span class="n">fstr</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fstr_from_C</span><span class="p">(</span><span class="s">&quot;10 + 10 = &quot;</span><span class="p">);</span>
+<span class="n">fstr_append_chr</span><span class="p">(</span><span class="n">str</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;2&#39;</span><span class="p">);</span>
+<span class="n">fstr_append_chr</span><span class="p">(</span><span class="n">str</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;0&#39;</span><span class="p">);</span>
+<span class="n">fstr_println</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
+<span class="n">fstr_free</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
+</code></pre></div>
+<output>10 + 10 = 20</output>
+
+<hr />
+<h3 id="insert-string-fstr_insert">Insert string : <code>fstr_insert</code> :</h3>
+<div class="arguments">
+<div class="ret">void</div>
+<div class="arg">fstr * str</div>
+<div class="arg">usize index</div>
+<div class="arg">fstr * add</div>
+</div>
+
+<p>This function inserts the <code>fstr * add</code> at the <code>index</code> within <code>str</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="n">fstr</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fstr_from_C</span><span class="p">(</span><span class="s">&quot;0123456789&quot;</span><span class="p">);</span>
+<span class="n">fstr</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">add</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fstr_from_C</span><span class="p">(</span><span class="s">&quot;abc&quot;</span><span class="p">);</span>
+<span class="n">fstr_insert</span><span class="p">(</span><span class="n">str</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">add</span><span class="p">);</span>
+<span class="n">fstr_print</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
+<span class="n">fstr_free</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
+<span class="n">fstr_free</span><span class="p">(</span><span class="n">add</span><span class="p">);</span>
+</code></pre></div>
+<output>0abc123456789</output>
+
+<hr />
+<h3 id="insert-c-string-fstr_insert_c">Insert C String : <code>fstr_insert_C</code> :</h3>
+<div class="arguments">
+<div class="ret">void</div>
+<div class="arg">fstr * str</div>
+<div class="arg">usize index</div>
+<div class="arg">chr * add</div>
+</div>
+
+<p>This function inserts the <code>chr * add</code> at the <code>index</code> within <code>str</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="n">fstr</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fstr_from_C</span><span class="p">(</span><span class="s">&quot;0123456789&quot;</span><span class="p">);</span>
+<span class="n">chr</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">add</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;abc&quot;</span><span class="p">;</span>
+<span class="n">fstr_insert_C</span><span class="p">(</span><span class="n">str</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">add</span><span class="p">);</span>
+<span class="n">fstr_print</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
+<span class="n">fstr_free</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
+</code></pre></div>
+<output>0abc123456789</output>
+
+<hr />
+<h3 id="append-format-c-fstr_append_format_c">Append Format C : <code>fstr_append_format_C</code></h3>
+<div class="arguments">
+<div class="ret">void</div>
+<div class="arg">fstr * str</div>
+<div class="arg">chr * format</div>
+<div class="arg">...</div>
+</div>
+
+<p>This function appends a C string constructed from a format (think <code>printf()</code>). </p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;time.h&gt;</span>
+
+<span class="n">fstr</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fstr_from_C</span><span class="p">(</span><span class="s">&quot;Info) &quot;</span><span class="p">);</span>
+<span class="n">fstr_append_format_C</span><span class="p">(</span><span class="n">str</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Unix Time is: %llus&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">time</span><span class="p">(</span><span class="nb">NULL</span><span class="p">));</span>
+<span class="n">fstr_println</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
+<span class="n">fstr_free</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
+</code></pre></div>
+<output>Info) Unix Time is: 1711501044s</output>
+
+<hr />
+<h3 id="pad-string-fstr_pad">Pad String : <code>fstr_pad</code> :</h3>
+<div class="arguments">
+<div class="ret">void</div>
+<div class="arg">fstr * str</div>
+<div class="arg">usize targetLength</div>
+<div class="arg">chr pad</div>
+<div class="arg">int8_t side</div>
+</div>
+
+<p>This function pads an <code>fstr</code> to reach the particular length <code>targetLength</code> by placing the padding character repeatedly on a particular <code>side</code></p>
+<p>In this and other cases;</p>
+<ul>
+<li><code>side &lt; 0</code> : For padding to occur on the left side</li>
+<li><code>side &gt; 0</code> : For padding to occur on the right side</li>
+<li><code>side == 0</code>: For padding to occur on both sides</li>
+</ul>
+<p>In the case that both sides padding cannot be equal in length, the extra character will be placed on the right side. If this is an issue, call this function with <code>targetLength - 1</code> and use <code>fstr_insert</code> with <code>index = 0</code> to pad the extra character to the length.</p>
+<p>In the case that <code>targetLength</code> is <code>&lt;=</code> the length of <code>str</code>, nothing will be done.</p>
+<div class="highlight"><pre><span></span><code><span class="n">fstr</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fstr_from_C</span><span class="p">(</span><span class="s">&quot;Centered&quot;</span><span class="p">);</span>
+<span class="n">fstr_pad</span><span class="p">(</span><span class="n">str</span><span class="p">,</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;-&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="n">fstr_insert_C</span><span class="p">(</span><span class="n">str</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;|&quot;</span><span class="p">);</span>
+<span class="n">fstr_insert_C</span><span class="p">(</span><span class="n">str</span><span class="p">,</span><span class="w"> </span><span class="n">fstr_length</span><span class="p">(</span><span class="n">str</span><span class="p">),</span><span class="w"> </span><span class="s">&quot;|&quot;</span><span class="p">);</span>
+<span class="n">fstr_println</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
+<span class="n">fstr_free</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
+</code></pre></div>
+<output>|----Centered----|</output>
+
+<hr /></p>
+    </article>
+</section>
+<!-- endblock -->
+            </main>
+
+            
+                    <!-- block preview -->
+        <div class="row row-cols-md-3 text-center pt-md-3" id="component-preview">
+            <div class="col themed-grid-col">
+                <a rel="prev" href=".." class="nav-link">
+                    <i class="fa fa-arrow-left"></i> Previous
+                </a>
+            </div>
+            <div class="col themed-grid-col"></div>
+            <div class="col themed-grid-col">
+                <a rel="next" href="../Definitions/" class="nav-link">
+                    Next <i class="fa fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+<!-- endblock -->
+            
+
+            
+                    <!-- block footer -->
+<footer class="pt-4 my-md-5 pt-md-5 border-top" id="component-footer">
+    <div class="row">
+        <div class="col-12 col-md">
+                <!-- block copyright -->
+
+    <small class="d-block mb-3">
+        Made with
+        <a href="https://github.com/FernandoCelmer/mkdocs-simple-blog" target="_blank" rel="noopener">
+            Simple Blog for MkDocs
+        </a>
+    </small>
+
+<!-- endblock -->
+        </div>
+    </div>
+</footer>
+<!-- endblock -->
+            
+        </div>
+
+            <script>var base_url = '..';</script>
+            <script src="../assets/js/jquery-3.3.1.slim.min.js""></script>
+            <script src="../assets/js/bootstrap.bundle.min.js""></script>
+            <script src="../assets/js/main.min.js""></script>
+                <script src="../search/main.js" defer></script>
+
+    </body>
+
+</html>
