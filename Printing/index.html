@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
     <head>
-                <title>Definitions - fstr</title>
+                <title>Printing - fstr</title>
 
             <meta charset="utf-8">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -67,16 +67,16 @@
                             nav-link text-gray text-decoration-none" href="../Count/">[Count]</a>
                         </li>
                         <li class="nav-item">
-                            <a class=" active 
-                            nav-link text-gray text-decoration-none" href="./">[Definitions]</a>
+                            <a class="
+                            nav-link text-gray text-decoration-none" href="../Definitions/">[Definitions]</a>
                         </li>
                         <li class="nav-item">
                             <a class="
                             nav-link text-gray text-decoration-none" href="../From/">[From]</a>
                         </li>
                         <li class="nav-item">
-                            <a class="
-                            nav-link text-gray text-decoration-none" href="../Printing/">[Printing]</a>
+                            <a class=" active 
+                            nav-link text-gray text-decoration-none" href="./">[Printing]</a>
                         </li>
                         <li class="nav-item">
                             <a class="
@@ -125,49 +125,84 @@
     <article>
         <header>
             
-                <h1 class=" title" id="component-title">Definitions</h1>
+                <h1 class=" title" id="component-title">Printing</h1>
             
         </header>
         <p><p><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet"></p>
-<h3 id="string-fstr">String : <code>fstr</code> :</h3>
-<p>The type <code>fstr</code> is a struct containing three fields; <code>end</code>, <code>error</code>, and <code>*data</code>. <code>end</code> is the pointer to the last character of the string. This is how we determine length. <code>error</code> is the <code>STR_ERROR</code> which we can use to check for errors after function calls. <code>*data</code> is the pointer to the start of our character array. Unlike common C character arrays this is not null terminated.</p>
-<div class="highlight"><pre><span></span><code><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="c1">//The address of the last character in our string, inclusive.</span>
-<span class="w">    </span><span class="n">usize</span><span class="w"> </span><span class="n">end</span><span class="p">;</span>
-<span class="w">    </span><span class="c1">//Whether an error occurred on the string operation</span>
-<span class="w">    </span><span class="n">STR_ERR</span><span class="w"> </span><span class="n">error</span><span class="p">;</span>
-<span class="w">    </span><span class="c1">//The starting pointer of our string data</span>
-<span class="w">    </span><span class="n">chr</span><span class="w"> </span><span class="o">*</span><span class="n">data</span><span class="p">;</span>
-<span class="p">}</span><span class="w"> </span><span class="n">fstr</span><span class="p">;</span>
-</code></pre></div>
-<h3 id="character-chr">Character : <code>chr</code> :</h3>
-<p>The character type in <code>fstr.h</code> is designed to be as flexible as possible. As such we use a macro defining chr as char. Many functions have support for <code>wchar_t</code> directly or incidentally, as such you can change the macro definition of <code>chr</code> to use <code>wchar_t</code> for projects that require wide characters.</p>
-<blockquote>
-<p><warning> Using <code>wchar_t</code> may or may not break functions. </warning></p>
-</blockquote>
-<div class="highlight"><pre><span></span><code><span class="cp">#define chr char</span>
-<span class="c1">//OR</span>
-<span class="cp">#define chr wchar_t</span>
-</code></pre></div>
-<hr />
-<h3 id="unsigned-values-usize">Unsigned Values : <code>usize</code>:</h3>
-<p><code>usize</code> is a basic macro wrapper around <code>uintptr_t</code> with the goal being to increase flexibility and cross platform support. <code>usize</code> is often used for lengths, counts, and pointers.</p>
-<div class="highlight"><pre><span></span><code><span class="cp">#define usize uintptr_t</span>
-</code></pre></div>
-<hr />
-<h3 id="errors-str_err">Errors : <code>STR_ERR</code> :</h3>
-<p><code>STR_ERR</code> is an <code>enum : uint8_t</code> type that allows the user to respond to errors raised by function calls. <code>fstr.h</code> functions will always try to recover gracefully, even in the case of null arguments, and its up to the user to check for errors raised by these functions. The <code>fstr</code> struct has the field <code>STR_ERR error</code> which gets assigned with a value in the case of an error.</p>
-<div class="highlight"><pre><span></span><code><span class="k">typedef</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">STR_ERR_None</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">    </span><span class="n">STR_ERR_IndexOutOfBounds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-<span class="w">    </span><span class="n">STR_ERR_AllocFailed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
-<span class="w">    </span><span class="n">STR_ERR_ReallocFailed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
-<span class="w">    </span><span class="n">STR_ERR_NullStringArg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
-<span class="w">    </span><span class="n">STR_ERR_INCORRECT_CHAR_POINTER</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span>
-<span class="p">}</span><span class="w"> </span><span class="n">STR_ERR</span><span class="p">;</span>
+<p>This is a set of functions relating to printing.</p>
+<h3 id="print-fstr_print">Print : <code>fstr_print</code> :</h3>
+<div class="arguments">
+<div class="ret">void</div>
+<div class="arg">fstr * str</div>
+</div>
+<p>This prints the string directly to stdout by using the <code>fwrite</code> function. This is many dozens of times faster than using printf.
+<div class="highlight"><pre><span></span><code><span class="n">fstr</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fstr_from_C</span><span class="p">(</span><span class="s">&quot;:) &quot;</span><span class="p">);</span>
+<span class="n">fstr_print</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
+<span class="n">fstr_print</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
+<span class="n">fstr_print</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
+<span class="n">fstr_free</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
 </code></pre></div></p>
+<output>:) :) :)</output>
+
+<hr />
+<h3 id="print-line-fstr_println">Print Line : <code>fstr_println</code> :</h3>
+<div class="arguments">
+<div class="ret">void</div>
+<div class="arg">fstr * str</div>
+</div>
+<p>This function also uses <code>fwrite</code> to write to stdio, as well as printing out a newline character using <code>printf</code>.
+<div class="highlight"><pre><span></span><code><span class="n">fstr</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fstr_from_C</span><span class="p">(</span><span class="s">&quot;:) &quot;</span><span class="p">);</span>
+<span class="n">fstr_println</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
+<span class="n">fstr_println</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
+<span class="n">fstr_println</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
+<span class="n">fstr_free</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
+</code></pre></div></p>
+<output>:) </output>
+<output>:) </output>
+<output>:) </output>
+
+<hr />
+<h3 id="print-characters-fstr_print_chrs">Print Characters : <code>fstr_print_chrs</code> :</h3>
+<div class="arguments">
+<div class="ret">void</div>
+<div class="arg">fstr * str</div>
+</div>
+
+<p>This function writes each character individually using <code>printf("%c")</code>. This is a MUCH slower but possibly more reliable print function in the case that <code>fwrite</code> doesn't properly work.</p>
+<div class="highlight"><pre><span></span><code><span class="n">fstr</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fstr_from_C</span><span class="p">(</span><span class="s">&quot;0x0x0x&quot;</span><span class="p">);</span>
+</code></pre></div>
+<output>0x0x0x</output>
+
+<hr />
+<h3 id="print-characters-formatted-fstr_print_chrs">Print Characters Formatted : <code>fstr_print_chrs</code> :</h3>
+<div class="arguments">
+<div class="ret">void</div>
+<div class="arg">fstr * str</div>
+<div class="arg">chr * format</div>
+</div>
+
+<p>This function prints out each individual character with the formatting applied. This does <strong>not</strong> take <code>varargs</code>. You must include the <code>%c</code> in the <code>format</code> </p>
+<div class="highlight"><pre><span></span><code><span class="n">fstr</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fstr_from_C</span><span class="p">(</span><span class="s">&quot;abc&quot;</span><span class="p">);</span>
+<span class="n">fstr_print_chrs_f</span><span class="p">(</span><span class="n">str</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;[%c]&quot;</span><span class="p">);</span>
+<span class="n">fstr_free</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
+</code></pre></div>
+<output>[a][b][c]</output>
+
+<hr />
+<h3 id="print-hex-codes-fstr_print_hex">Print Hex Codes : <code>fstr_print_hex</code> :</h3>
+<div class="arguments">
+<div class="ret">void</div>
+<div class="arg">fstr * str</div>
+</div>
+
+<p>This function prints out each character as its hex code then adds a space separator.</p>
+<div class="highlight"><pre><span></span><code><span class="n">fstr</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fstr_from_C</span><span class="p">(</span><span class="s">&quot;hex text&quot;</span><span class="p">);</span>
+<span class="n">fstr_print_hex</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
+<span class="n">fstr_free</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
+</code></pre></div>
+<hr /></p>
     </article>
 </section>
 <!-- endblock -->
@@ -177,13 +212,13 @@
                     <!-- block preview -->
         <div class="row row-cols-md-3 text-center pt-md-3" id="component-preview">
             <div class="col themed-grid-col">
-                <a rel="prev" href="../Count/" class="nav-link">
+                <a rel="prev" href="../From/" class="nav-link">
                     <i class="fa fa-arrow-left"></i> Previous
                 </a>
             </div>
             <div class="col themed-grid-col"></div>
             <div class="col themed-grid-col">
-                <a rel="next" href="../From/" class="nav-link">
+                <a rel="next" href="../getting_started/" class="nav-link">
                     Next <i class="fa fa-arrow-right"></i>
                 </a>
             </div>
