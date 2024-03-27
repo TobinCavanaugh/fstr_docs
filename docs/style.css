@@ -33,9 +33,6 @@ h3 {
   font-size: 4rem;
 }
 
-.hljs.cpp {
-  font-style: normal;
-}
 
 .nav-link {
   color: var(--url) !important;
@@ -74,11 +71,11 @@ h6 {
   color: var(--txt);
 }
 
-h1{
+h1 {
   font-size: 3em !important;
 }
 
-.fs-4{
+.fs-4 {
   color: var(--txt);
   font-size: 2.5em !important;
 }
@@ -90,48 +87,52 @@ h3 {
   background-repeat: no-repeat;
 }
 
-.arguments{
-  display:flex;
+.arguments {
+  display: flex;
 }
 
-.arg{
+
+/*Argument Value Descriptor*/
+.arg {
   padding-left: 0.5em;
   padding-right: 0.5em;
   background-color: black;
   margin-right: 0.5em;
-  /* box-shadow: 0 0 4px red; */
-
   border-color: salmon;
   border-style: solid;
   border-width: 0.1em;
+
+  /*Perhaps when neuromorphic is hip*/
+  /* background-image: linear-gradient(to bottom, maroon, black); */
 }
 
-.ret{
+/*Return Value Descriptor*/
+.ret {
   padding-left: 0.5em;
   padding-right: 0.5em;
   background-color: black;
   margin-right: 0.5em;
   /* box-shadow: 0 0 4px turquoise; */
- 
 
   border-style: solid;
   border-color: var(--txt);
   border-width: 0.1em;
 }
 
-output::before {
-  content: "> ";
-}
 output {
   background-color: black;
   font-family: sans-serif;
   padding-left: 0.5em;
   padding-right: 0.5em;
   font-size: small;
-  
+
   border-color: #77dd77;
   border-style: solid;
   border-width: 0.1em;
+}
+
+output::before {
+  content: "> ";
 }
 
 /*CODE BLOCK COLORS*/
@@ -140,7 +141,6 @@ h3 code {
   text-transform: none !important;
   /* box-shadow: 0 0 0.2em wheat; */
 
-  
   border-style: solid;
   border-width: 0.1em;
 }

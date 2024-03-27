@@ -56,9 +56,9 @@ fstr_free(str);
 This creates an `fstr` of a particular length filled with a particular `chr`.
 
 ```C
-fstr * str = fstr_from_length(10, '!');
+fstr * str = fstr_from_length(5, '0');
 fstr_println(str);
 fstr_free(str);
 ```
 
-<output>!!!!!!!!!!</output>
+<output>00000</output>
