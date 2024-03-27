@@ -1,4 +1,4 @@
-:root{
+:root {
   --bg: #1c1c1eff;
   --txt: antiquewhite;
   --txt-alt: wheat;
@@ -74,18 +74,75 @@ h6 {
   color: var(--txt);
 }
 
-h3{
+h1{
+  font-size: 3em !important;
+}
+
+.fs-4{
+  color: var(--txt);
+  font-size: 2.5em !important;
+}
+
+h3 {
   background-image: linear-gradient(to right, var(--txt), transparent);
   background-position: bottom;
   background-size: 100% 5%;
   background-repeat: no-repeat;
 }
 
+.arguments{
+  display:flex;
+}
+
+.arg{
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  background-color: black;
+  margin-right: 0.5em;
+  /* box-shadow: 0 0 4px red; */
+
+  border-color: salmon;
+  border-style: solid;
+  border-width: 0.1em;
+}
+
+.ret{
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  background-color: black;
+  margin-right: 0.5em;
+  /* box-shadow: 0 0 4px turquoise; */
+ 
+
+  border-style: solid;
+  border-color: var(--txt);
+  border-width: 0.1em;
+}
+
+output::before {
+  content: "> ";
+}
+output {
+  background-color: black;
+  font-family: sans-serif;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  font-size: small;
+  
+  border-color: #77dd77;
+  border-style: solid;
+  border-width: 0.1em;
+}
+
 /*CODE BLOCK COLORS*/
 h3 code {
   padding: 3px;
   text-transform: none !important;
-  box-shadow: 0 0 0.2em wheat;
+  /* box-shadow: 0 0 0.2em wheat; */
+
+  
+  border-style: solid;
+  border-width: 0.1em;
 }
 
 .highlight pre {
