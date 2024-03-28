@@ -138,16 +138,15 @@
 <h3 id="abstract">Abstract</h3>
 <p>A simple C library for handling both common and complex dynamic string functionality.</p>
 <h3 id="implementation">Implementation</h3>
-<p><code>fstr</code> takes advantage of a novel string implementation. It uses a character array with a pointer to the last character of the string. This allows for strings that support inline <code>\0</code> and length that only requires one subtraction to calculate. The <code>fstr</code> type is dynamically allocated, and most functions take care to only allocate when strictly necessary.</p>
+<p><code>fstr</code> takes advantage of a novel string implementation. It uses a character array with a pointer to the last character of the string. This allows for strings that support inline <code>\0</code>s and a length that only requires one subtraction to calculate. The <code>fstr</code> type is dynamically allocated, and functions take care to only allocate when strictly necessary.</p>
 <h3 id="getting-started">Getting Started</h3>
 <p><quote>"Good code is its own best documentation" </quote>
 <author>Steve McConnell</author></p>
-<p><code>fstr</code> was made with the intention of simplicity, it's well commented, and intuitively designed. The header files contain helpful descriptions will be your friend throughout using <code>fstr.h</code>.</p>
+<p><code>fstr</code> was made with the intention of simplicity, it's well commented, and intuitively designed. The header files contain helpful documentation and will be your friend throughout using <code>fstr.h</code>. The code within <code>fstr.c</code> is clear and understandable, but very performant.</p>
 <p><a href="getting_started/">Quick Start Guide</a></p>
 <h3 id="quick-examples">Quick Examples</h3>
 <blockquote>
-<p>Creating and using string:</p>
-</blockquote>
+<p>Creating and using string:
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fstr.h&quot;</span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span>
@@ -155,10 +154,8 @@
 <span class="w">    </span><span class="n">fstr_println</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
 <span class="w">    </span><span class="n">fstr_free</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
 <span class="p">}</span>
-</code></pre></div>
-<blockquote>
-<p>Parsing an integer from a string:</p>
-</blockquote>
+</code></pre></div></p>
+<p>Parsing an integer from a string:
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fstr.h&quot;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fstr_parse.h&quot;</span>
@@ -174,6 +171,7 @@
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></p>
+</blockquote></p>
     </article>
 </section>
 <!-- endblock -->
