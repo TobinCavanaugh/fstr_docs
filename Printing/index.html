@@ -80,6 +80,10 @@
                         </li>
                         <li class="nav-item">
                             <a class="
+                            nav-link text-gray text-decoration-none" href="../Removing/">[Removing]</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="
                             nav-link text-gray text-decoration-none" href="../getting_started/">[Getting started]</a>
                         </li>
             </ul>
@@ -132,6 +136,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet"></p>
 <p>This is a set of functions relating to printing.</p>
+<hr />
 <h3 id="print-fstr_print">Print : <code>fstr_print</code> :</h3>
 <div class="arguments">
 <div class="ret">void</div>
@@ -172,11 +177,12 @@
 
 <p>This function writes each character individually using <code>printf("%c")</code>. This is a MUCH slower but possibly more reliable print function in the case that <code>fwrite</code> doesn't properly work.</p>
 <div class="highlight"><pre><span></span><code><span class="n">fstr</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fstr_from_C</span><span class="p">(</span><span class="s">&quot;0x0x0x&quot;</span><span class="p">);</span>
+<span class="n">fstr_print_chrs</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
 </code></pre></div>
 <output>0x0x0x</output>
 
 <hr />
-<h3 id="print-characters-formatted-fstr_print_chrs">Print Characters Formatted : <code>fstr_print_chrs</code> :</h3>
+<h3 id="print-characters-formatted-fstr_print_chrs_f">Print Characters Formatted : <code>fstr_print_chrs_f</code> :</h3>
 <div class="arguments">
 <div class="ret">void</div>
 <div class="arg">fstr * str</div>
@@ -202,6 +208,8 @@
 <span class="n">fstr_print_hex</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
 <span class="n">fstr_free</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
 </code></pre></div>
+<output>0x68 0x65 0x78 0x20 0x74 0x65 0x78 0x74</output>
+
 <hr /></p>
     </article>
 </section>
@@ -218,7 +226,7 @@
             </div>
             <div class="col themed-grid-col"></div>
             <div class="col themed-grid-col">
-                <a rel="next" href="../getting_started/" class="nav-link">
+                <a rel="next" href="../Removing/" class="nav-link">
                     Next <i class="fa fa-arrow-right"></i>
                 </a>
             </div>

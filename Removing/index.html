@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
     <head>
-                <title>Count - fstr</title>
+                <title>Removing - fstr</title>
 
             <meta charset="utf-8">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -63,8 +63,8 @@
                             nav-link text-gray text-decoration-none" href="../Append/">[Append]</a>
                         </li>
                         <li class="nav-item">
-                            <a class=" active 
-                            nav-link text-gray text-decoration-none" href="./">[Count]</a>
+                            <a class="
+                            nav-link text-gray text-decoration-none" href="../Count/">[Count]</a>
                         </li>
                         <li class="nav-item">
                             <a class="
@@ -79,8 +79,8 @@
                             nav-link text-gray text-decoration-none" href="../Printing/">[Printing]</a>
                         </li>
                         <li class="nav-item">
-                            <a class="
-                            nav-link text-gray text-decoration-none" href="../Removing/">[Removing]</a>
+                            <a class=" active 
+                            nav-link text-gray text-decoration-none" href="./">[Removing]</a>
                         </li>
                         <li class="nav-item">
                             <a class="
@@ -129,73 +129,13 @@
     <article>
         <header>
             
-                <h1 class=" title" id="component-title">Count</h1>
+                <h1 class=" title" id="component-title">Removing</h1>
             
         </header>
         <p><p><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet"></p>
-<p>This is a set of functions relating to counting things in <code>fstr</code>.</p>
-<hr />
-<h3 id="count-c-string-fstr_count_c">Count C string : <code>fstr_count_C</code> :</h3>
-<div class="arguments">
-<div class="ret">void</div>
-<div class="arg">fstr * str</div>
-<div class="arg">chr * sub</div>
-</div>
-
-<p>This function counts the instances of the C substring <code>sub</code> within the <code>fstr</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="n">fstr</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fstr_from_C</span><span class="p">(</span><span class="s">&quot;The quick brown fox jumps over the lazy dog&quot;</span><span class="p">);</span>
-<span class="n">fstr_to_lower</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
-<span class="n">usize</span><span class="w"> </span><span class="n">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fstr_count_C</span><span class="p">(</span><span class="n">str</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;the&quot;</span><span class="p">);</span>
-<span class="n">printf</span><span class="p">(</span><span class="s">&quot;%llu instances of &#39;the&#39;&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">count</span><span class="p">);</span>
-<span class="n">fstr_free</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
-</code></pre></div>
-<output>2 instances of 'the'</output>
-
-<hr />
-<h3 id="count-string-fstr_count">Count string : <code>fstr_count</code> :</h3>
-<div class="arguments">
-<div class="ret">void</div>
-<div class="arg">fstr * str</div>
-<div class="arg">fstr * sub</div>
-</div>
-
-<div class="highlight"><pre><span></span><code><span class="n">fstr</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fstr_from_C</span><span class="p">(</span><span class="s">&quot;It was the best of times, it was the worst of times&quot;</span><span class="p">);</span>
-<span class="n">fstr</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">sub</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fstr_from_C</span><span class="p">(</span><span class="s">&quot;it&quot;</span><span class="p">);</span>
-<span class="n">fstr_to_lower</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
-
-<span class="n">usize</span><span class="w"> </span><span class="n">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fstr_count</span><span class="p">(</span><span class="n">str</span><span class="p">,</span><span class="w"> </span><span class="n">sub</span><span class="p">);</span>
-
-<span class="n">printf</span><span class="p">(</span><span class="s">&quot;%llu instances of &#39;&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">count</span><span class="p">);</span>
-<span class="n">fstr_print</span><span class="p">(</span><span class="n">sub</span><span class="p">);</span>
-<span class="n">printf</span><span class="p">(</span><span class="s">&quot;&#39;&quot;</span><span class="p">);</span>
-
-<span class="n">fstr_free</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
-<span class="n">fstr_free</span><span class="p">(</span><span class="n">sub</span><span class="p">);</span>
-</code></pre></div>
-<output>2 instances of 'it'</output>
-
-<hr />
-<h3 id="count-characters-fstr_count_chr">Count characters : <code>fstr_count_chr</code> :</h3>
-<div class="arguments">
-<div class="ret">void</div>
-<div class="arg">fstr * str</div>
-<div class="arg">fstr * sub</div>
-</div>
-
-<div class="highlight"><pre><span></span><code><span class="n">fstr</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fstr_from_C</span><span class="p">(</span><span class="s">&quot;01000001 01010111 01000011 01011001 00111111&quot;</span><span class="p">);</span>
-
-<span class="n">usize</span><span class="w"> </span><span class="n">countOfZeros</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fstr_count_chr</span><span class="p">(</span><span class="n">str</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;0&#39;</span><span class="p">);</span>
-<span class="n">usize</span><span class="w"> </span><span class="n">countOfOnes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fstr_count_chr</span><span class="p">(</span><span class="n">str</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;1&#39;</span><span class="p">);</span>
-
-<span class="n">printf</span><span class="p">(</span><span class="s">&quot;Count of zeros: %lld </span><span class="se">\n</span><span class="s">Count of ones: %lld&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">countOfZeros</span><span class="p">,</span><span class="w"> </span><span class="n">countOfOnes</span><span class="p">);</span>
-
-<span class="n">fstr_free</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
-</code></pre></div>
-<output>Count of zeros: 20</output>
-<output>Count of ones: 20</output>
-
+<p>This is the set of functions relating to removing from strings.</p>
 <hr /></p>
     </article>
 </section>
@@ -206,13 +146,13 @@
                     <!-- block preview -->
         <div class="row row-cols-md-3 text-center pt-md-3" id="component-preview">
             <div class="col themed-grid-col">
-                <a rel="prev" href="../Append/" class="nav-link">
+                <a rel="prev" href="../Printing/" class="nav-link">
                     <i class="fa fa-arrow-left"></i> Previous
                 </a>
             </div>
             <div class="col themed-grid-col"></div>
             <div class="col themed-grid-col">
-                <a rel="next" href="../Definitions/" class="nav-link">
+                <a rel="next" href="../getting_started/" class="nav-link">
                     Next <i class="fa fa-arrow-right"></i>
                 </a>
             </div>

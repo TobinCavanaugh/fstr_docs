@@ -80,6 +80,10 @@
                         </li>
                         <li class="nav-item">
                             <a class="
+                            nav-link text-gray text-decoration-none" href="../Removing/">[Removing]</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="
                             nav-link text-gray text-decoration-none" href="../getting_started/">[Getting started]</a>
                         </li>
             </ul>
@@ -131,6 +135,8 @@
         <p><p><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet"></p>
+<p><code>fstr</code> definitions contained within <code>fstr.h</code></p>
+<hr />
 <h3 id="string-fstr">String : <code>fstr</code> :</h3>
 <p>The type <code>fstr</code> is a struct containing three fields; <code>end</code>, <code>error</code>, and <code>*data</code>. <code>end</code> is the pointer to the last character of the string. This is how we determine length. <code>error</code> is the <code>STR_ERROR</code> which we can use to check for errors after function calls. <code>*data</code> is the pointer to the start of our character array. Unlike common C character arrays this is not null terminated.</p>
 <div class="highlight"><pre><span></span><code><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
