@@ -179,6 +179,10 @@ h3 code {
   border-width: 0.1em;
 }
 
+code {
+  padding: 3px;
+}
+
 .highlight pre {
   line-height: 1.75;
 

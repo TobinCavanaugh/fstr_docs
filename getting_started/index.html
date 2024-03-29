@@ -60,31 +60,11 @@
                         </li>
                         <li class="nav-item">
                             <a class="
-                            nav-link text-gray text-decoration-none" href="../Append/">[Append]</a>
+                            nav-link text-gray text-decoration-none" href="https://github.com/TobinCavanaugh/fstr">[Source]</a>
                         </li>
                         <li class="nav-item">
                             <a class="
-                            nav-link text-gray text-decoration-none" href="../Count/">[Count]</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="
-                            nav-link text-gray text-decoration-none" href="../Definitions/">[Definitions]</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="
-                            nav-link text-gray text-decoration-none" href="../From/">[From]</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="
-                            nav-link text-gray text-decoration-none" href="../Printing/">[Printing]</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="
-                            nav-link text-gray text-decoration-none" href="../Removing/">[Removing]</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class=" active 
-                            nav-link text-gray text-decoration-none" href="./">[Getting started]</a>
+                            nav-link text-gray text-decoration-none" href="../Docpage/">[Documentation]</a>
                         </li>
             </ul>
         </li>
@@ -134,7 +114,12 @@
         </header>
         <p><p><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet"></p></p>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet"></p>
+<p>To use <code>fstr</code>, download the latest release from <a href="https://github.com/TobinCavanaugh/fstr">Github</a></p>
+<p>Extract the zip and place the <code>fstr.c</code> and <code>fstr.h</code> files next to your source files in your program. If you want to use the parsing portion of the library, place <code>fstr_parse.c</code> and <code>fstr_parse.h</code> next to your source files.</p>
+<p>In the case that you use <code>CMake</code>, ensure that you include <code>fstr.c</code> and <code>fstr_parse.c</code> (if applicable) to the <code>add_executable</code> directive.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">add_executable</span><span class="p">(</span><span class="s">PROJECT_NAME</span><span class="w"> </span><span class="s">main.c</span><span class="w"> </span><span class="s">...</span><span class="w"> </span><span class="s">fstr.c</span><span class="w"> </span><span class="s">fstr_parse.c</span><span class="p">)</span>
+</code></pre></div></p>
     </article>
 </section>
 <!-- endblock -->
@@ -142,19 +127,6 @@
 
             
                     <!-- block preview -->
-        <div class="row row-cols-md-3 text-center pt-md-3" id="component-preview">
-            <div class="col themed-grid-col">
-                <a rel="prev" href="../Removing/" class="nav-link">
-                    <i class="fa fa-arrow-left"></i> Previous
-                </a>
-            </div>
-            <div class="col themed-grid-col"></div>
-            <div class="col themed-grid-col">
-                <a rel="next" class="nav-link disabled">
-                    Next <i class="fa fa-arrow-right"></i>
-                </a>
-            </div>
-        </div>
 <!-- endblock -->
             
 

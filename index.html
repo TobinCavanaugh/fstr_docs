@@ -60,31 +60,11 @@
                         </li>
                         <li class="nav-item">
                             <a class="
-                            nav-link text-gray text-decoration-none" href="Append/">[Append]</a>
+                            nav-link text-gray text-decoration-none" href="https://github.com/TobinCavanaugh/fstr">[Source]</a>
                         </li>
                         <li class="nav-item">
                             <a class="
-                            nav-link text-gray text-decoration-none" href="Count/">[Count]</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="
-                            nav-link text-gray text-decoration-none" href="Definitions/">[Definitions]</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="
-                            nav-link text-gray text-decoration-none" href="From/">[From]</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="
-                            nav-link text-gray text-decoration-none" href="Printing/">[Printing]</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="
-                            nav-link text-gray text-decoration-none" href="Removing/">[Removing]</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="
-                            nav-link text-gray text-decoration-none" href="getting_started/">[Getting started]</a>
+                            nav-link text-gray text-decoration-none" href="Docpage/">[Documentation]</a>
                         </li>
             </ul>
         </li>
@@ -135,6 +115,8 @@
         <p><p><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet"></p>
+<p><a href="/Docpage">Take me to the documentation <i class='fa fa-link'></i></a> </p>
+<p><a href="https://github.com/TobinCavanaugh/fstr">Read the source code <i class="fa fa-external-link"></i></a></p>
 <h3 id="abstract">Abstract</h3>
 <p>A simple C library for handling both common and complex dynamic string functionality.</p>
 <h3 id="implementation">Implementation</h3>
@@ -143,7 +125,7 @@
 <p><quote>"Good code is its own best documentation" </quote>
 <author>Steve McConnell</author></p>
 <p><code>fstr</code> was made with the intention of simplicity, it's well commented, and intuitively designed. The header files contain helpful documentation and will be your friend throughout using <code>fstr.h</code>. The code within <code>fstr.c</code> is clear and understandable, but very performant.</p>
-<p><a href="getting_started/">Quick Start Guide</a></p>
+<p><a href="getting_started/">Quick Start Guide <i class="fa fa-external-link"></i> </a></p>
 <h3 id="quick-examples">Quick Examples</h3>
 <blockquote>
 <p>Creating and using string:
@@ -155,6 +137,9 @@
 <span class="w">    </span><span class="n">fstr_free</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div></p>
+</blockquote>
+<p>(1): <code>fstr</code>s are made by using the series of <a href="/From">from</a> functions. In this case, <a href="/From/#from-c-string-fstr_from_C">fstr_from_C</a></p>
+<blockquote>
 <p>Parsing an integer from a string:
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fstr.h&quot;</span>
@@ -163,7 +148,7 @@
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="n">fstr</span><span class="w"> </span><span class="o">*</span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fstr_from_C</span><span class="p">(</span><span class="s">&quot; 1234 &quot;</span><span class="p">);</span>
 <span class="w">    </span><span class="kt">int64_t</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">fstr_try_to_i64</span><span class="p">(</span><span class="n">str</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">value</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">fstr_try_to_i64</span><span class="p">(</span><span class="n">str</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">value</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">//(1)</span>
 <span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%lld&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">value</span><span class="p">);</span>
 <span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Failed to parse fstr: &quot;</span><span class="p">);</span>
@@ -187,7 +172,7 @@
             </div>
             <div class="col themed-grid-col"></div>
             <div class="col themed-grid-col">
-                <a rel="next" href="Append/" class="nav-link">
+                <a rel="next" href="Docpage/" class="nav-link">
                     Next <i class="fa fa-arrow-right"></i>
                 </a>
             </div>

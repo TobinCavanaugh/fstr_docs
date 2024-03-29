@@ -60,31 +60,11 @@
                         </li>
                         <li class="nav-item">
                             <a class="
-                            nav-link text-gray text-decoration-none" href="../Append/">[Append]</a>
+                            nav-link text-gray text-decoration-none" href="https://github.com/TobinCavanaugh/fstr">[Source]</a>
                         </li>
                         <li class="nav-item">
                             <a class="
-                            nav-link text-gray text-decoration-none" href="../Count/">[Count]</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="
-                            nav-link text-gray text-decoration-none" href="../Definitions/">[Definitions]</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="
-                            nav-link text-gray text-decoration-none" href="../From/">[From]</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="
-                            nav-link text-gray text-decoration-none" href="../Printing/">[Printing]</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class=" active 
-                            nav-link text-gray text-decoration-none" href="./">[Removing]</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="
-                            nav-link text-gray text-decoration-none" href="../getting_started/">[Getting started]</a>
+                            nav-link text-gray text-decoration-none" href="../Docpage/">[Documentation]</a>
                         </li>
             </ul>
         </li>
@@ -136,7 +116,97 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet"></p>
 <p>This is the set of functions relating to removing from strings.</p>
-<hr /></p>
+<hr />
+<h3 id="remove-at-fstr_remove_at">Remove At : <code>fstr_remove_at</code> :</h3>
+<div class="arguments">
+<div class="ret">void</div>
+<div class="arg">usize index</div>
+<div class="arg">usize length</div>
+</div>
+<p>Removes <code>length</code> amount of characters at <code>index</code></p>
+<div class="highlight"><pre><span></span><code><span class="n">fstr</span><span class="w"> </span><span class="o">*</span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fstr_from_C</span><span class="p">(</span><span class="s">&quot;0123456789&quot;</span><span class="p">);</span>
+<span class="n">fstr_println</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
+<span class="n">fstr_remove_at</span><span class="p">(</span><span class="n">str</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span>
+<span class="n">fstr_println</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
+
+<span class="n">fstr_free</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
+</code></pre></div>
+<output>0123456789</output>
+<output>0456789</output>
+
+<h3 id="remove-string-fstr_remove">Remove String : <code>fstr_remove</code> :</h3>
+<div class="arguments">
+<div class="ret">void</div>
+<div class="arg">fstr * str</div>
+<div class="arg">fstr * buf</div>
+</div>
+
+<p>This function removes any instances of <code>buf</code> from the <code>str</code>. </p>
+<div class="highlight"><pre><span></span><code><span class="n">fstr</span><span class="w"> </span><span class="o">*</span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fstr_from_C</span><span class="p">(</span><span class="s">&quot;01000001 01010111 01000011 01011001 00111111&quot;</span><span class="p">);</span>
+<span class="n">fstr_println</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
+<span class="n">fstr</span><span class="w"> </span><span class="o">*</span><span class="n">buf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fstr_from_C</span><span class="p">(</span><span class="s">&quot; &quot;</span><span class="p">);</span>
+
+<span class="c1">//Remove all spaces</span>
+<span class="n">fstr_remove</span><span class="p">(</span><span class="n">str</span><span class="p">,</span><span class="w"> </span><span class="n">buf</span><span class="p">);</span>
+<span class="n">fstr_println</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
+
+<span class="n">fstr_free</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
+<span class="n">fstr_free</span><span class="p">(</span><span class="n">buf</span><span class="p">);</span>
+</code></pre></div>
+<output>01000001 01010111 01000011 01011001 00111111</output>
+<output>0100000101010111010000110101100100111111</output>
+
+<hr />
+<h3 id="remove-c-string-fstr_remove_c">Remove C String : <code>fstr_remove_C</code> :</h3>
+<div class="arguments">
+<div class="ret">void</div>
+<div class="arg">fstr * str</div>
+<div class="arg">chr * buf</div>
+</div>
+<p>This function removes all instances of the <code>buf</code> C strings from within the <code>str</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="n">fstr</span><span class="w"> </span><span class="o">*</span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fstr_from_C</span><span class="p">(</span><span class="s">&quot;Whats up fam&quot;</span><span class="p">);</span>
+<span class="n">fstr_println</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
+
+<span class="n">fstr_remove_C</span><span class="p">(</span><span class="n">str</span><span class="p">,</span><span class="w"> </span><span class="s">&quot; fam&quot;</span><span class="p">);</span>
+<span class="n">fstr_println</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
+<span class="n">fstr_free</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
+</code></pre></div>
+<hr />
+<h3 id="remove-character-fstr_remove_chr">Remove Character : <code>fstr_remove_chr</code> :</h3>
+<div class="arguments">
+<div class="ret">void</div>
+<div class="arg">fstr * str</div>
+<div class="arg">chr * c</div>
+</div>
+<p>This function removes all instances of the singular character <code>c</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="n">fstr</span><span class="w"> </span><span class="o">*</span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fstr_from_C</span><span class="p">(</span><span class="s">&quot;1---1---1---1&quot;</span><span class="p">);</span>
+<span class="n">fstr_println</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
+<span class="n">fstr_remove_chr</span><span class="p">(</span><span class="n">str</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;1&#39;</span><span class="p">);</span>
+<span class="n">fstr_println</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
+
+<span class="n">fstr_free</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
+</code></pre></div>
+<output>1---1---1---1</output>
+<output>---------</output>
+
+<hr />
+<h3 id="remove-multiple-characters-fstr_remove_chr_varargs">Remove Multiple Characters : <code>fstr_remove_chr_varargs</code> :</h3>
+<div class="arguments">
+<div class="ret">void</div>
+<div class="arg">fstr * str</div>
+<div class="arg">int num_chars</div>
+<div class="arg">...</div>
+</div>
+<p>Removes a variable amount of <code>chr</code>s from the string. Takes in the number of characters to be replaced (the count of varargs) and the individual characters themselves.</p>
+<div class="highlight"><pre><span></span><code><span class="n">fstr</span><span class="w"> </span><span class="o">*</span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fstr_from_C</span><span class="p">(</span><span class="s">&quot;The quick, brown fox. jumps over; the lazy dog.,&quot;</span><span class="p">);</span>
+<span class="n">fstr_println</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
+<span class="n">fstr_remove_chr_varargs</span><span class="p">(</span><span class="n">str</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;,&#39;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;;&#39;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;.&#39;</span><span class="p">);</span>
+<span class="n">fstr_println</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
+
+<span class="n">fstr_free</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
+</code></pre></div>
+<output>The quick, brown fox. jumps over; the lazy dog.,</output>
+<output>The quick brown fox jumps over the lazy dog</output></p>
     </article>
 </section>
 <!-- endblock -->
@@ -144,19 +214,6 @@
 
             
                     <!-- block preview -->
-        <div class="row row-cols-md-3 text-center pt-md-3" id="component-preview">
-            <div class="col themed-grid-col">
-                <a rel="prev" href="../Printing/" class="nav-link">
-                    <i class="fa fa-arrow-left"></i> Previous
-                </a>
-            </div>
-            <div class="col themed-grid-col"></div>
-            <div class="col themed-grid-col">
-                <a rel="next" href="../getting_started/" class="nav-link">
-                    Next <i class="fa fa-arrow-right"></i>
-                </a>
-            </div>
-        </div>
 <!-- endblock -->
             
 
