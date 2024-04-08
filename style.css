@@ -67,7 +67,7 @@ author {
 }
 
 .navbar-toggler {
-  border-color: var(txt);
+  border-color: var(--txt);
 }
 
 .d-block {
@@ -76,9 +76,13 @@ author {
 
 a {
   color: var(--txt) !important;
+  padding: .1em;
 }
+
 a:hover {
-  color: lightgrey !important;
+  color: var(--bg-darkest) !important;
+  font-weight: bolder;
+  background-color: var(--txt);
 }
 
 p,
@@ -138,11 +142,11 @@ h3 {
   border-width: 0.1em;
 }
 
-.nav-item{
+.nav-item {
   line-height: 2rem;
 }
 
-.navbar-nav{
+.navbar-nav {
   --bs-nav-link-padding-y: 0rem;
 }
 
@@ -161,7 +165,7 @@ output {
 
   display: block;
 
-  margin-top: -0.1em
+  margin-top: -0.1em;
   /* margin-top: -0.5px; */
 }
 
