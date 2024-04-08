@@ -128,6 +128,22 @@
 <span class="w">    </span><span class="n">chr</span><span class="w"> </span><span class="o">*</span><span class="n">data</span><span class="p">;</span>
 <span class="p">}</span><span class="w"> </span><span class="n">fstr</span><span class="p">;</span>
 </code></pre></div>
+<hr />
+<h3 id="results-fstr_result">Results : <code>fstr_result</code> :</h3>
+<p>This struct is used to handle the results of functions that might return different things. In particular, it has the possibility of returning a boolean telling you if the function succeeded or not. The result values are placed into a union and depending on the function can be an integer or a floating point. This is the reason that the functions in <code>fstr_parse.c</code> only support <code>64</code> bit values, as any lower would provide no benefit.
+<div class="highlight"><pre><span></span><code><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">success</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">//This union defines either an integer value or a float value.</span>
+<span class="w">    </span><span class="c1">//CHECK THE FUNCTION DOCUMENTATION TO SEE WHICH TYPE THEY RETURN</span>
+<span class="w">    </span><span class="k">union</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">usize</span><span class="w"> </span><span class="n">i_val</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">uint64_t</span><span class="w"> </span><span class="n">u_val</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">f_val</span><span class="p">;</span>
+<span class="w">    </span><span class="p">};</span>
+<span class="p">}</span><span class="w"> </span><span class="n">fstr_result</span><span class="p">;</span>
+</code></pre></div></p>
+<hr />
 <h3 id="character-chr">Character : <code>chr</code> :</h3>
 <p>The character type in <code>fstr.h</code> is designed to be as flexible as possible. As such we use a macro defining chr as char. Many functions have support for <code>wchar_t</code> directly or incidentally, as such you can change the macro definition of <code>chr</code> to use <code>wchar_t</code> for projects that require wide characters.</p>
 <blockquote>
