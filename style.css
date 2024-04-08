@@ -5,6 +5,10 @@
   --txt: antiquewhite;
   --txt-alt: wheat;
   --url: whitesmoke;
+
+  --output-accent: #77dd77;
+
+  --argument-accent: salmon;
 }
 
 body {
@@ -29,7 +33,7 @@ h3 {
 }
 
 .title-color {
-  color: var(txt);
+  color: var(--txt);
 }
 .title {
   font-size: 4rem;
@@ -79,7 +83,7 @@ a {
   padding: .1em;
 }
 
-a:hover {
+a:hover, a:focus {
   color: var(--bg-darkest) !important;
   font-weight: bolder;
   background-color: var(--txt);
@@ -121,7 +125,7 @@ h3 {
   padding-right: 0.5em;
   background-color: var(--bg-darkest);
   margin-right: 0.5em;
-  border-color: salmon;
+  border-color: var(--argument-accent);
   border-style: solid;
   border-width: 0.1em;
 
@@ -157,13 +161,14 @@ output {
   padding-right: 0.5em;
   font-size: small;
 
-  border-color: #77dd77;
+  border-color: var(--output-accent);
   border-style: solid;
   border-width: 0.1em;
 
   white-space: pre;
 
   display: block;
+
 
   margin-top: -0.1em;
   /* margin-top: -0.5px; */
