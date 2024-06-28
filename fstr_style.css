@@ -1,0 +1,218 @@
+:root {
+  --bg: #1c1c1eff;
+  --bg-alt: #121213;
+  --bg-darkest: #0d0d0e;
+  --txt: antiquewhite;
+  --txt-alt: wheat;
+  --url: whitesmoke;
+}
+
+body {
+  font-family: "Playfair Display", serif;
+  /* font-family: "Cormorant Garamond", serif; */
+  font-weight: 400;
+  font-style: normal;
+  background-color: var(--bg);
+  color: var(--txt);
+  font-size: medium;
+}
+
+h3 {
+  font-size: large;
+}
+
+*::selection {
+  /* color:wheat; */
+  color: var(--bg-darkest);
+  font-weight: 800 !important;
+  background-color: var(--txt-alt);
+}
+
+.title-color {
+  color: var(txt);
+}
+.title {
+  font-size: 4rem;
+}
+
+quote {
+  display: block;
+  white-space: pre;
+  font-family: sans-serif;
+  background-color: var(--bg-alt);
+  padding-left: 1em;
+}
+author::before {
+  content: "-";
+  padding-right: 1em;
+}
+author {
+  display: block;
+  background-color: var(--bg-alt);
+  font-family: sans-serif;
+  white-space: pre;
+  padding-left: 2em;
+}
+
+.nav-link {
+  color: var(--url) !important;
+}
+
+.navbar-toggler-icon::before {
+  color: var(--url) !important;
+  content: "≡";
+  vertical-align: middle;
+  font-size: x-large;
+  text-align: center;
+}
+
+.navbar-toggler {
+  border-color: var(txt);
+}
+
+.d-block {
+  content-visibility: hidden;
+}
+
+a {
+  color: var(--txt) !important;
+}
+a:hover {
+  color: lightgrey !important;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--txt);
+}
+
+h1 {
+  font-size: 3em !important;
+}
+
+.fs-4 {
+  color: var(--txt);
+  font-size: 2.5em !important;
+}
+
+h3 {
+  background-image: linear-gradient(to right, var(--txt), transparent);
+  background-position: bottom;
+  background-size: 100% 5%;
+  background-repeat: no-repeat;
+}
+
+.arguments {
+  display: flex;
+}
+
+/*Argument Value Descriptor*/
+.arg {
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  background-color: var(--bg-darkest);
+  margin-right: 0.5em;
+  border-color: salmon;
+  border-style: solid;
+  border-width: 0.1em;
+
+  /*Perhaps when neuromorphic is hip*/
+  /* background-image: linear-gradient(to bottom, maroon, var(--bg-darkest)); */
+}
+
+/*Return Value Descriptor*/
+.ret {
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  background-color: var(--bg-darkest);
+  margin-right: 0.5em;
+  /* box-shadow: 0 0 4px turquoise; */
+
+  border-style: solid;
+  border-color: var(--txt);
+  border-width: 0.1em;
+}
+
+output {
+  background-color: var(--bg-darkest);
+  font-family: sans-serif;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  font-size: small;
+
+  border-color: #77dd77;
+  border-style: solid;
+  border-width: 0.1em;
+}
+
+output::before {
+  content: "> ";
+}
+
+/*CODE BLOCK COLORS*/
+h3 code {
+  padding: 3px;
+  text-transform: none !important;
+  /* box-shadow: 0 0 0.2em wheat; */
+
+  border-style: solid;
+  border-width: 0.1em;
+}
+
+.highlight pre {
+  line-height: 1.75;
+}
+
+p {
+  line-height: 2;
+}
+
+.n ::before {
+  color: lightgray;
+}
+.p {
+  color: salmon;
+}
+.o {
+  color: skyblue;
+}
+
+.hljs-string {
+  color: lightgreen;
+}
+.hljs-meta {
+  color: orange;
+}
+.hljs-meta-keyword {
+  color: yellow;
+}
+.hljs-meta-string {
+  color: orange;
+}
+.hljs-keyword {
+  color: violet;
+}
+.hljs-title {
+  color: lightskyblue;
+}
+.hljs-comment {
+  color: greenyellow;
+}
+.hljs-attr {
+  color: turquoise;
+}
+
+/*WARNING BOX*/
+warning::before {
+  content: "⚠️";
+  font-style: normal;
+}
+warning {
+  text-decoration: underline wavy gold 0.1rem;
+  text-underline-offset: 0.2rem;
+}
