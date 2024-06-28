@@ -6,7 +6,7 @@ theme:
   icon:
     annotation: material/arrow-right-circle
 extra_css:
-  - /style.css
+  - /fstr_style.css
 markdown_extensions:
   - attr_list
   - md_in_html

@@ -148,6 +148,7 @@
   },
   "active": "9c15c3098c2b5427",
   "lastOpenFiles": [
+    "site/search/search_index.json",
     "site/getting_started/index.html",
     "site/getting_started",
     "site/From/index.html",
@@ -156,7 +157,6 @@
     "site/Definitions",
     "site/Append/index.html",
     "site/Append",
-    "site/search/search_index.json",
     "site/fstr_style.css",
     "docs/fstr_style.css",
     "docs/Definitions.md",
