@@ -20,7 +20,7 @@
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
             <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
             <link rel="stylesheet" href="../assets/css/main.min.css">
-                <link href="../style.css" rel="stylesheet">
+                <link href="/style.css" rel="stylesheet">
                 <script src="../search/main.js"></script>
 
             
@@ -59,12 +59,20 @@
                             nav-link text-gray text-decoration-none" href="..">[Home]</a>
                         </li>
                         <li class="nav-item">
-                            <a class="
-                            nav-link text-gray text-decoration-none" href="https://github.com/TobinCavanaugh/fstr">[Source]</a>
+                            <a class=" active 
+                            nav-link text-gray text-decoration-none" href="./">[Append]</a>
                         </li>
                         <li class="nav-item">
                             <a class="
-                            nav-link text-gray text-decoration-none" href="../Docpage/">[Documentation]</a>
+                            nav-link text-gray text-decoration-none" href="../Definitions/">[Definitions]</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="
+                            nav-link text-gray text-decoration-none" href="../From/">[From]</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="
+                            nav-link text-gray text-decoration-none" href="../getting_started/">[Getting started]</a>
                         </li>
             </ul>
         </li>
@@ -116,7 +124,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet"></p>
 <p>This is a set of functions relating to appending to <code>fstr</code> types</p>
-<hr />
 <h3 id="append-c-string-fstr_append_c">Append C string : <code>fstr_append_C</code> :</h3>
 <div class="arguments">
   <div class="ret">void</div>
@@ -125,8 +132,8 @@
 </div>
 
 <p>This function appends a C style string (or literal) <code>buf</code> to our <code>fstr</code>.
-</br> This supports <code>wchar_t</code>.
-</supwchr></p>
+<br/> This supports <code>wchar_t</code>.
+<supwchr/></p>
 <div class="highlight"><pre><span></span><code><span class="n">fstr</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fstr_from_C</span><span class="p">(</span><span class="s">&quot;Hello&quot;</span><span class="p">);</span>
 <span class="n">fstr_append_C</span><span class="p">(</span><span class="n">str</span><span class="p">,</span><span class="w"> </span><span class="s">&quot; Cruel World&quot;</span><span class="p">);</span>
 <span class="n">fstr_println</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
@@ -262,6 +269,19 @@ This supports <code>wchar_t</code></p>
 
             
                     <!-- block preview -->
+        <div class="row row-cols-md-3 text-center pt-md-3" id="component-preview">
+            <div class="col themed-grid-col">
+                <a rel="prev" href=".." class="nav-link">
+                    <i class="fa fa-arrow-left"></i> Previous
+                </a>
+            </div>
+            <div class="col themed-grid-col"></div>
+            <div class="col themed-grid-col">
+                <a rel="next" href="../Definitions/" class="nav-link">
+                    Next <i class="fa fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
 <!-- endblock -->
             
 

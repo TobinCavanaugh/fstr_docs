@@ -5,10 +5,6 @@
   --txt: antiquewhite;
   --txt-alt: wheat;
   --url: whitesmoke;
-
-  --output-accent: #77dd77;
-
-  --argument-accent: salmon;
 }
 
 body {
@@ -33,7 +29,7 @@ h3 {
 }
 
 .title-color {
-  color: var(--txt);
+  color: var(txt);
 }
 .title {
   font-size: 4rem;
@@ -71,7 +67,7 @@ author {
 }
 
 .navbar-toggler {
-  border-color: var(--txt);
+  border-color: var(txt);
 }
 
 .d-block {
@@ -80,13 +76,9 @@ author {
 
 a {
   color: var(--txt) !important;
-  padding: .1em;
 }
-
-a:hover, a:focus {
-  color: var(--bg-darkest) !important;
-  font-weight: bolder;
-  background-color: var(--txt);
+a:hover {
+  color: lightgrey !important;
 }
 
 p,
@@ -125,7 +117,7 @@ h3 {
   padding-right: 0.5em;
   background-color: var(--bg-darkest);
   margin-right: 0.5em;
-  border-color: var(--argument-accent);
+  border-color: salmon;
   border-style: solid;
   border-width: 0.1em;
 
@@ -146,14 +138,6 @@ h3 {
   border-width: 0.1em;
 }
 
-.nav-item {
-  line-height: 2rem;
-}
-
-.navbar-nav {
-  --bs-nav-link-padding-y: 0rem;
-}
-
 output {
   background-color: var(--bg-darkest);
   font-family: sans-serif;
@@ -161,17 +145,9 @@ output {
   padding-right: 0.5em;
   font-size: small;
 
-  border-color: var(--output-accent);
+  border-color: #77dd77;
   border-style: solid;
   border-width: 0.1em;
-
-  white-space: pre;
-
-  display: block;
-
-
-  margin-top: -0.1em;
-  /* margin-top: -0.5px; */
 }
 
 output::before {
@@ -188,22 +164,17 @@ h3 code {
   border-width: 0.1em;
 }
 
-code {
-  padding: 3px;
-}
-
 .highlight pre {
   line-height: 1.75;
-
-  border-color: var(--txt);
-  border-style: solid;
-  border-width: 0.1em;
 }
 
 p {
   line-height: 2;
 }
 
+.n ::before {
+  color: lightgray;
+}
 .p {
   color: salmon;
 }

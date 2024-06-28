@@ -20,7 +20,7 @@
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
             <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
             <link rel="stylesheet" href="../assets/css/main.min.css">
-                <link href="../style.css" rel="stylesheet">
+                <link href="/style.css" rel="stylesheet">
                 <script src="../search/main.js"></script>
 
             
@@ -60,11 +60,19 @@
                         </li>
                         <li class="nav-item">
                             <a class="
-                            nav-link text-gray text-decoration-none" href="https://github.com/TobinCavanaugh/fstr">[Source]</a>
+                            nav-link text-gray text-decoration-none" href="../Append/">[Append]</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class=" active 
+                            nav-link text-gray text-decoration-none" href="./">[Definitions]</a>
                         </li>
                         <li class="nav-item">
                             <a class="
-                            nav-link text-gray text-decoration-none" href="../Docpage/">[Documentation]</a>
+                            nav-link text-gray text-decoration-none" href="../From/">[From]</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="
+                            nav-link text-gray text-decoration-none" href="../getting_started/">[Getting started]</a>
                         </li>
             </ul>
         </li>
@@ -115,8 +123,6 @@
         <p><p><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet"></p>
-<p><code>fstr</code> definitions contained within <code>fstr.h</code></p>
-<hr />
 <h3 id="string-fstr">String : <code>fstr</code> :</h3>
 <p>The type <code>fstr</code> is a struct containing three fields; <code>end</code>, <code>error</code>, and <code>*data</code>. <code>end</code> is the pointer to the last character of the string. This is how we determine length. <code>error</code> is the <code>STR_ERROR</code> which we can use to check for errors after function calls. <code>*data</code> is the pointer to the start of our character array. Unlike common C character arrays this is not null terminated.</p>
 <div class="highlight"><pre><span></span><code><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
@@ -128,22 +134,6 @@
 <span class="w">    </span><span class="n">chr</span><span class="w"> </span><span class="o">*</span><span class="n">data</span><span class="p">;</span>
 <span class="p">}</span><span class="w"> </span><span class="n">fstr</span><span class="p">;</span>
 </code></pre></div>
-<hr />
-<h3 id="results-fstr_result">Results : <code>fstr_result</code> :</h3>
-<p>This struct is used to handle the results of functions that might return different things. In particular, it has the possibility of returning a boolean telling you if the function succeeded or not. The result values are placed into a union and depending on the function can be an integer or a floating point. This is the reason that the functions in <code>fstr_parse.c</code> only support <code>64</code> bit values, as any lower would provide no benefit.
-<div class="highlight"><pre><span></span><code><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">success</span><span class="p">;</span>
-
-<span class="w">    </span><span class="c1">//This union defines either an integer value or a float value.</span>
-<span class="w">    </span><span class="c1">//CHECK THE FUNCTION DOCUMENTATION TO SEE WHICH TYPE THEY RETURN</span>
-<span class="w">    </span><span class="k">union</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">usize</span><span class="w"> </span><span class="n">i_val</span><span class="p">;</span>
-<span class="w">        </span><span class="kt">uint64_t</span><span class="w"> </span><span class="n">u_val</span><span class="p">;</span>
-<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">f_val</span><span class="p">;</span>
-<span class="w">    </span><span class="p">};</span>
-<span class="p">}</span><span class="w"> </span><span class="n">fstr_result</span><span class="p">;</span>
-</code></pre></div></p>
-<hr />
 <h3 id="character-chr">Character : <code>chr</code> :</h3>
 <p>The character type in <code>fstr.h</code> is designed to be as flexible as possible. As such we use a macro defining chr as char. Many functions have support for <code>wchar_t</code> directly or incidentally, as such you can change the macro definition of <code>chr</code> to use <code>wchar_t</code> for projects that require wide characters.</p>
 <blockquote>
@@ -169,8 +159,7 @@
 <span class="w">    </span><span class="n">STR_ERR_NullStringArg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
 <span class="w">    </span><span class="n">STR_ERR_INCORRECT_CHAR_POINTER</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span>
 <span class="p">}</span><span class="w"> </span><span class="n">STR_ERR</span><span class="p">;</span>
-</code></pre></div>
-<hr /></p>
+</code></pre></div></p>
     </article>
 </section>
 <!-- endblock -->
@@ -178,6 +167,19 @@
 
             
                     <!-- block preview -->
+        <div class="row row-cols-md-3 text-center pt-md-3" id="component-preview">
+            <div class="col themed-grid-col">
+                <a rel="prev" href="../Append/" class="nav-link">
+                    <i class="fa fa-arrow-left"></i> Previous
+                </a>
+            </div>
+            <div class="col themed-grid-col"></div>
+            <div class="col themed-grid-col">
+                <a rel="next" href="../From/" class="nav-link">
+                    Next <i class="fa fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
 <!-- endblock -->
             
 
