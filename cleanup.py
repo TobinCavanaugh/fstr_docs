@@ -8,7 +8,7 @@ def replace_text_in_files(directory):
                 with open(file_path, 'r+') as f:
                     file_content = f.read()
                     f.seek(0)
-                    f.write(file_content.replace("/style.css", "fstr_style.css"))
+                    f.write(file_content.replace("/style.css", "/fstr_style.css"))
                     f.truncate()
 
 replace_text_in_files(".")

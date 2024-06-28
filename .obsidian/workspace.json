@@ -157,13 +157,13 @@
     "site/Definitions",
     "site/Append/index.html",
     "site/Append",
-    "site/fstr_style.css",
-    "docs/fstr_style.css",
+    "site/index.html",
+    "site/search.html",
+    "site/assets/img/logo.png",
     "docs/Definitions.md",
     "docs/index.md",
     "docs/getting_started.md",
     "docs/From.md",
-    "docs/Append.md",
-    "site/assets/img/logo.png"
+    "docs/Append.md"
   ]
 }
