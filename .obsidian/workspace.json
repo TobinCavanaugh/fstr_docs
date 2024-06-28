@@ -1,0 +1,168 @@
+{
+  "main": {
+    "id": "77b519ca9e4b928e",
+    "type": "split",
+    "children": [
+      {
+        "id": "c58ba9cb25a01e54",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b83d3961d9b659a8",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/Append.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "7dc10e1189cb2eac",
+    "type": "split",
+    "children": [
+      {
+        "id": "73134a98bb66aade",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "9c15c3098c2b5427",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "2546042601a3f157",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "09b9878d0413a033",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200
+  },
+  "right": {
+    "id": "51046cb0b46bc199",
+    "type": "split",
+    "children": [
+      {
+        "id": "1096fba5586499e0",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "88012d7b54ab8b88",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "docs/Append.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "cf93676ac5a5a482",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "docs/Append.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "e5d8da7d9448e8e0",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "361713958ddf067f",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "docs/Append.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "b83d3961d9b659a8",
+  "lastOpenFiles": [
+    "docs/index.md",
+    "docs/getting_started.md",
+    "docs/Definitions.md",
+    "docs/From.md",
+    "docs/Append.md",
+    "site/search/search_index.json",
+    "site/getting_started/index.html",
+    "site/getting_started",
+    "site/From/index.html",
+    "site/From",
+    "site/Definitions/index.html",
+    "site/Definitions",
+    "site/Append/index.html",
+    "site/Append",
+    "site/index.html",
+    "site/assets/img/logo.png"
+  ]
+}
