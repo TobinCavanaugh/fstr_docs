@@ -122,7 +122,20 @@
         </header>
         <p><p><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet"></p></p>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+<br/>
+1. Grab the latest release of the <code>fstr</code> project from <a href="https://github.com/TobinCavanaugh/fstr/releases">https://github.com/TobinCavanaugh/fstr/releases</a> by downloading the <code>fstr.h</code> and <code>fstr.c</code> files to your project source directory.
+<br/>
+<br/>
+2. Include <code>fstr.h</code> in the file you wish to use <code>fstr</code> functionality in. 
+<br/>
+<br/>
+3. Reference <code>fstr.c</code> in your build tool. For CMake, list <code>fstr.c</code> as one of the arguments in <code>add_executable</code>. <br/>
+<br/>
+4. To create <code>fstr*</code> structs use the <a href="From">from</a> functions.
+<br/>
+<br/>
+5. Remember to use <code>fstr_free</code> to free your strings when they're done being used.<br/></p></p>
     </article>
 </section>
 <!-- endblock -->
