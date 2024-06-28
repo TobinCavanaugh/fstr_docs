@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/Append.md",
+                "file": "docs/index.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/Append.md",
+                "file": "docs/index.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/Append.md",
+                "file": "docs/index.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/Append.md"
+                "file": "docs/index.md"
               }
             }
           }
@@ -146,14 +146,8 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "b83d3961d9b659a8",
+  "active": "9c15c3098c2b5427",
   "lastOpenFiles": [
-    "docs/index.md",
-    "docs/getting_started.md",
-    "docs/Definitions.md",
-    "docs/From.md",
-    "docs/Append.md",
-    "site/search/search_index.json",
     "site/getting_started/index.html",
     "site/getting_started",
     "site/From/index.html",
@@ -162,7 +156,14 @@
     "site/Definitions",
     "site/Append/index.html",
     "site/Append",
-    "site/index.html",
+    "site/search/search_index.json",
+    "site/fstr_style.css",
+    "docs/fstr_style.css",
+    "docs/Definitions.md",
+    "docs/index.md",
+    "docs/getting_started.md",
+    "docs/From.md",
+    "docs/Append.md",
     "site/assets/img/logo.png"
   ]
 }
